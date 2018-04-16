@@ -18,42 +18,58 @@ var i,
     navBrandLink = document.createElement('a'), // replace navbar-brand tag
     navBrandLinkNode = document.createTextNode('Brand Name'), // replace navbar-brand name
     navLinksDivComment = document.createComment('Collect the nav links and other content for toggling'),
-    navLinksDiv = document.createElement('div'),
-    navLinksUl = document.createElement('ul'),
+    
+    navLinksDiv = document.createElement('div'), // dropdown main div
+    
+    navLinksUl = document.createElement('ul'), // master links ul
+    
+    // Links
     navLinksLiHome = document.createElement('li'),
     navLinksHome = document.createElement('a'),
-    navLinkHomeNode = document.createTextNode('Home'),
+    navLinkHomeNode = document.createTextNode('Home'), // replace Home
+    
     navLinksLiAbout = document.createElement('li'),
     navLinksAbout = document.createElement('a'),
-    navLinkAboutNode = document.createTextNode('About'),
+    navLinkAboutNode = document.createTextNode('About'), // replace About
+    
     navLinksLiFaq = document.createElement('li'),
     navLinksFaq = document.createElement('a'),
-    navLinkFaqNode = document.createTextNode('FAQ'),
+    navLinkFaqNode = document.createTextNode('FAQ'), // replace FAQ
+    
     navLinksLiServices = document.createElement('li'),
     navLinksServices = document.createElement('a'),
-    navLinksServicesNode = document.createTextNode('Services'),
-    navLinksLiServicesUl = document.createElement('ul'),
+    navLinksServicesNode = document.createTextNode('Services'), // replace Services
+    
+    navLinksServicesSpan = document.createElement('span'), // down arrow
+    navLinksLiServicesUl = document.createElement('ul'), // dropdown ul
+    
     navLinksLiProg = document.createElement('li'),
     navLinksProg = document.createElement('a'),
-    navLinksProgNode = document.createTextNode('Machine Programing'),
+    navLinksProgNode = document.createTextNode('Machine Programing'), // replace Machine Programing
+    
     navLinksLiWeb = document.createElement('li'),
     navLinksWeb = document.createElement('a'),
-    navLinksWebNode = document.createTextNode('Web Developing'),
+    navLinksWebNode = document.createTextNode('Web Developing'), // replace Web Developing
+    
     navLinksLiDesktop = document.createElement('li'),
     navLinksDesktop = document.createElement('a'),
-    navLinksDesktopNode = document.createTextNode('Desktop Software'),
+    navLinksDesktopNode = document.createTextNode('Desktop Software'), // replace Desktop Software
+    
+    navLinkaLiSeparator = document.createElement('li'),
     navLinksLiHost = document.createElement('li'),
     navLinksHost = document.createElement('a'),
-    navLinksHostNode = document.createTextNode('Web Hosting'),
+    navLinksHostNode = document.createTextNode('Web Hosting'), // replace Web Hosting
+    
     navLinksLiContact = document.createElement('li'),
     navLinksContact = document.createElement('a'),
-    navLinkContactNode = document.createTextNode('Contact');
+    navLinkContactNode = document.createTextNode('Contact'); // replace Contact
     
 // set attributes
 mainNav.setAttribute('class', 'navbar navbar-inverse navbar-fixed-top');
 containerNav.setAttribute('class', 'container');
 navHeader.setAttribute('class', 'navbar-header');
 
+// mobile toggle navbar btn
 navToggleBtn.setAttribute('class', 'navbar-toggle collapsed');
 navToggleBtn.setAttribute('type', 'button');
 navToggleBtn.setAttribute('data-toggle', 'collapse');
@@ -62,33 +78,43 @@ navToggleBtn.setAttribute('aria-expanded', 'false');
 
 navToggleSpan.setAttribute('class', 'sr-only');
 
+// navbar brand
 navBrandLink.setAttribute('class', 'navbar-brand');
 navBrandLink.setAttribute('href', '#'); // replace navbar-brand '#' with the actualy link
 
+// dropdown main div
 navLinksDiv.setAttribute('class', 'collapse navbar-collapse');
 navLinksDiv.setAttribute('id', 'mobile-navbar');
 
+// master links ul
 navLinksUl.setAttribute('class', 'nav navbar-nav navbar-right');
-navLinksHome.setAttribute('href', 'index.html');
-navLinksAbout.setAttribute('href', 'about.html');
-navLinksFaq.setAttribute('href', 'faq.html');
-navLinksContact.setAttribute('href', 'contact.html');
+
+// links
+navLinksHome.setAttribute('href', 'index.html'); // replace Home link
+navLinksAbout.setAttribute('href', 'about.html'); // replace About link
+navLinksFaq.setAttribute('href', 'faq.html'); // replace FAQ link
+navLinksContact.setAttribute('href', 'contact.html'); // replace Contact link
 
 navLinksLiServices.setAttribute('class', 'dropdown');
 
-navLinksServices.setAttribute('href', '#');
+navLinksServices.setAttribute('href', '#'); // replace Services link
 navLinksServices.setAttribute('class', 'dropdown-toggle');
 navLinksServices.setAttribute('data-toggle', 'dropdown');
 navLinksServices.setAttribute('role', 'button');
 navLinksServices.setAttribute('aria-haspopup', 'true');
 navLinksServices.setAttribute('aria-expanded', 'false');
 
+navLinksServicesSpan.setAttribute('class', 'caret');
+
 navLinksLiServicesUl.setAttribute('class', 'dropdown-menu');
 
-navLinksProg.setAttribute('href', 'proq.html');
-navLinksWeb.setAttribute('href', 'web.html');
-navLinksDesktop.setAttribute('href', 'desktop.html');
-navLinksHost.setAttribute('href', 'host.html');
+navLinkaLiSeparator.setAttribute('role', 'separator');
+navLinkaLiSeparator.setAttribute('class', 'divider');
+
+navLinksProg.setAttribute('href', 'proq.html'); // replace Machine Programming link
+navLinksWeb.setAttribute('href', 'web.html'); // replace Web Developing link
+navLinksDesktop.setAttribute('href', 'desktop.html'); // replace Desktop Software link
+navLinksHost.setAttribute('href', 'host.html'); // replace Web Hosting link
 
 // locate elements & nodes and comments
 mainNav.appendChild(containerNav);
@@ -115,57 +141,54 @@ containerNav.appendChild(navLinksDiv);
 
 navLinksDiv.appendChild(navLinksUl);
 
+// Home
 navLinksUl.appendChild(navLinksLiHome);
-navLinksUl.appendChild(navLinksLiAbout);
-navLinksUl.appendChild(navLinksLiFaq);
-navLinksUl.appendChild(navLinksLiServices);
-navLinksUl.appendChild(navLinksLiContact);
-
 navLinksLiHome.appendChild(navLinksHome);
 navLinksHome.appendChild(navLinkHomeNode);
 
+// About
+navLinksUl.appendChild(navLinksLiAbout);
 navLinksLiAbout.appendChild(navLinksAbout);
 navLinksAbout.appendChild(navLinkAboutNode);
 
+// FAQ
+navLinksUl.appendChild(navLinksLiFaq);
 navLinksLiFaq.appendChild(navLinksFaq);
 navLinksFaq.appendChild(navLinkFaqNode);
 
+// Services
+navLinksUl.appendChild(navLinksLiServices);
 navLinksLiServices.appendChild(navLinksServices);
 navLinksServices.appendChild(navLinksServicesNode);
+navLinksServices.appendChild(navLinksServicesSpan);
+
+// Services dropdown
 navLinksLiServices.appendChild(navLinksLiServicesUl);
 
+// Machine Programing
 navLinksLiServicesUl.appendChild(navLinksLiProg);
 navLinksLiProg.appendChild(navLinksProg);
 navLinksProg.appendChild(navLinksProgNode);
 
+// Web Developing
 navLinksLiServicesUl.appendChild(navLinksLiWeb);
 navLinksLiWeb.appendChild(navLinksWeb);
 navLinksWeb.appendChild(navLinksWebNode);
 
+// Desktop Software
 navLinksLiServicesUl.appendChild(navLinksLiDesktop);
 navLinksLiDesktop.appendChild(navLinksDesktop);
 navLinksDesktop.appendChild(navLinksDesktopNode);
 
+// Dropdown Separator
+navLinksLiServicesUl.appendChild(navLinkaLiSeparator);
+
+// Web Hosting
 navLinksLiServicesUl.appendChild(navLinksLiHost);
 navLinksLiHost.appendChild(navLinksHost);
 navLinksHost.appendChild(navLinksHostNode);
 
+// Contact
+navLinksUl.appendChild(navLinksLiContact);
 navLinksLiContact.appendChild(navLinksContact);
 navLinksContact.appendChild(navLinkContactNode);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
